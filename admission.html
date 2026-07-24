@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>प्रवेश अर्ज / Admission Form</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; margin: 0; padding: 20px; color: #333; }
+        .form-container { max-width: 650px; background: white; margin: auto; padding: 30px; border-radius: 10px; box-shadow: 0px 4px 15px rgba(0,0,0,0.1); border-top: 6px solid #b30000; }
+        h2 { color: #b30000; text-align: center; margin-bottom: 5px; font-size: 24px; }
+        h3 { text-align: center; margin-top: 0; color: #555; font-size: 18px; border-bottom: 2px solid #eee; padding-bottom: 15px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; font-size: 15px; }
+        label span { font-weight: normal; color: #666; font-size: 13px; }
+        input, select, textarea { width: 100%; padding: 10px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 5px; font-size: 15px; }
+        input:focus, select:focus, textarea:focus { border-color: #b30000; outline: none; box-shadow: 0 0 5px rgba(179, 0, 0, 0.2); }
+        .optional { color: #28a745 !important; font-weight: normal; font-size: 13px; }
+        .notice-box { background-color: #fff3cd; border-left: 5px solid #ffc107; padding: 15px; border-radius: 4px; margin-bottom: 25px; }
+        .notice-box p { margin: 0; font-weight: bold; color: #856404; font-size: 15px; }
+        button { background-color: #b30000; color: white; padding: 12px 20px; border: none; border-radius: 5px; width: 100%; cursor: pointer; font-size: 18px; font-weight: bold; transition: background 0.3s; }
+        button:hover { background-color: #800000; }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>ऑनलाइन प्रवेश अर्ज</h2>
+    <h3>Online Admission Form</h3>
+
+    <!-- सूचना विभाग -->
+    <div class="notice-box">
+        <p>सूचना: महाविद्यालयात प्रत्येक विषय स्वतंत्र शिकवीला जातो.</p>
+        <p style="font-weight: normal; margin-top: 5px; font-size: 13px; color: #666;">Notice: Every subject is taught separately in the college.</p>
+    </div>
+
+    <form action="#" method="POST">
+        <!-- विद्यार्थ्याचे नाव -->
+        <div class="form-group">
+            <label>विद्यार्थ्याचे संपूर्ण नाव <br><span>Full Name of Student (As per Aadhaar Card):</span></label>
+            <input type="text" required placeholder="आधार कार्डनुसार पूर्ण नाव लिहा">
+        </div>
+
+        <!-- आधार नंबर -->
+        <div class="form-group">
+            <label>आधार नंबर <span class="optional">(अनिवार्य नाही / Optional):</span></label>
+            <input type="text" maxlength="12" placeholder="१२ अंकी आधार नंबर टाका">
+        </div>
+
+        <!-- जन्म तारीख -->
+        <div class="form-group">
+            <label>जन्म तारीख <br><span>Date of Birth:</span></label>
+            <input type="date" required>
+        </div>
+
+        <!-- पत्ता -->
+        <div class="form-group">
+            <label>पत्ता <br><span>Address:</span></label>
+            <textarea rows="3" required placeholder="तुमचा पूर्ण पत्ता लिहा"></textarea>
+        </div>
+
+        <!-- मोबाईल नंबर -->
+        <div class="form-group">
+            <label>मोबाईल नंबर <br><span>Mobile Number:</span></label>
+            <input type="tel" required maxlength="10" placeholder="१० अंकी मोबाईल नंबर">
+        </div>
+
+        <!-- व्हाट्सअप नंबर -->
+        <div class="form-group">
+            <label>व्हाट्सअप नंबर <br><span>WhatsApp Number:</span></label>
+            <input type="tel" required maxlength="10" placeholder="व्हाट्सअप मोबाईल नंबर">
+        </div>
+
+        <!-- विषय निवड -->
+        <div class="form-group">
+            <label>विषय <br><span>Select Subject:</span></label>
+            <select required>
+                <option value="" disabled selected>--- विषय निवडा ---</option>
+                <option value="गायन">गायन (Vocal)</option>
+                <option value="हार्मोनियम">हार्मोनियम (Harmonium)</option>
+                <option value="तबला">तबला (Tabla)</option>
+                <option value="बासरी">बासरी (Flute)</option>
+                <option value="मृदंग">मृदंग (Mridangam)</option>
+                <option value="ढोलक">ढोलक (Dholak)</option>
+                <option value="ढोलकी">ढोलकी (Dholki)</option>
+                <option value="गिटार">गिटार (Guitar)</option>
+                <option value="सितार">सितार (Sitar)</option>
+                <option value="इतर">संगीतातील इतर विषय (Other Music Subjects)</option>
+            </select>
+        </div>
+
+        <!-- व्यवसाय -->
+        <div class="form-group">
+            <label>व्यवसाय <br><span>Occupation / Profession:</span></label>
+            <input type="text" required placeholder="उदा. विद्यार्थी, नोकरी, व्यवसाय">
+        </div>
+
+        <!-- वेळ -->
+        <div class="form-group">
+            <label>वेळ <span class="optional">(आपल्या सवडीनुसार टाकावी)</span><br><span>Preferred Batch Time:</span></label>
+            <input type="text" placeholder="उदा. संध्याकाळी ५ ते ६">
+        </div>
+
+        <!-- सबमिट बटन -->
+        <button type="submit">अर्ज सबमिट करा / Submit Form</button>
+    </form>
+</div>
+
+</body>
+</html>
