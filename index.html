@@ -1,527 +1,1332 @@
-<!DOCTYPE html>    <html lang="mr">    
-<head>    
-  <meta charset="UTF-8">    
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">      <title>अनवले संगीत महाविद्यालय, उदगीर</title>    
-  <meta name="description" content="अनवले संगीत महाविद्यालय, उदगीर — गुरु-शिष्य परंपरा, शास्त्रीय संगीत शिक्षण आणि चार पिढ्यांचा समृद्ध सांगीतिक वारसा.">    
-  <meta name="keywords" content="Anwale Sangeet Mahavidyalaya Udgir, अनवले संगीत महाविद्यालय, उदगीर, संगीत शिक्षण, शास्त्रीय संगीत">    
-  <meta name="author" content="अनवले संगीत महाविद्यालय, उदगीर">      <style>    
-    *{margin:0;padding:0;box-sizing:border-box}    
-    html{scroll-behavior:smooth}    
-    body{    
-      font-family:"Noto Sans Devanagari","Arial",sans-serif;    
-      background:#fffaf1;    
-      color:#2b1a1d;    
-      line-height:1.8;    
-    }    
-    a{text-decoration:none;color:inherit}    
-    img{max-width:100%;display:block}    
-    
-    :root{    
-      --maroon:#651c2b;    
-      --dark:#3d1019;    
-      --gold:#c69a3b;    
-      --light-gold:#f4e4bb;    
-      --cream:#fffaf1;    
-      --white:#fff;    
-      --text:#332629;    
-      --muted:#6c5b5e;    
-      --shadow:0 12px 35px rgba(61,16,25,.12);    
-    }    
-    
-    .top-strip{    
-      background:var(--dark);    
-      color:#f7e9c6;    
-      text-align:center;    
-      padding:8px 15px;    
-      font-size:14px;    
-      font-weight:600;    
-    }    
-    
-    header{    
-      position:relative;    
-      background:linear-gradient(135deg,#fffdf8,#f7edda);    
-      border-bottom:1px solid #dfc78f;    
-      padding:30px 70px 27px 20px;    
-      text-align:center;    
-    }    
-    
-    .main-title{    
-      color:var(--maroon);    
-      font-size:clamp(28px,5vw,48px);    
-      font-weight:900;    
-      line-height:1.25;    
-      letter-spacing:.3px;    
-    }    
-    
-    .subtitle{    
-      color:#684c28;    
-      font-size:clamp(14px,2vw,18px);    
-      font-weight:700;    
-      margin-top:7px;    
-    }    
-    
-    .menu-button{    
-      position:absolute;    
-      right:22px;    
-      top:28px;    
-      width:52px;    
-      height:52px;    
-      border:1px solid var(--gold);    
-      background:#fff;    
-      border-radius:10px;    
-      cursor:pointer;    
-      display:flex;    
-      flex-direction:column;    
-      justify-content:center;    
-      align-items:center;    
-      gap:5px;    
-      z-index:1001;    
-    }    
-    
-    .menu-button span{    
-      display:block;    
-      width:26px;    
-      height:3px;    
-      border-radius:4px;    
-      background:var(--maroon);    
-    }    
-    
-    .side-menu{    
-      display:none;    
-      position:absolute;    
-      right:20px;    
-      top:88px;    
-      width:min(320px,calc(100vw - 40px));    
-      background:#fff;    
-      border:1px solid #ead8b0;    
-      border-radius:13px;    
-      box-shadow:var(--shadow);    
-      z-index:1000;    
-      overflow:hidden;    
-      text-align:left;    
-    }    
-    
-    .side-menu.show{display:block}    
-    
-    .side-menu a{    
-      display:block;    
-      padding:13px 18px;    
-      color:var(--maroon);    
-      font-weight:700;    
-      border-bottom:1px solid #f1e7d2;    
-    }    
-    
-    .side-menu a:hover{background:#fff5df}    
-    
-    .hero{    
-      padding:60px 20px 50px;    
-      text-align:center;    
-      background:    
-        radial-gradient(circle at 50% 0,#fff 0,#fffaf1 55%,#f3e4c4 100%);    
-    }    
-    
-    .section-label{    
-      color:var(--gold);    
-      font-size:16px;    
-      font-weight:900;    
-      letter-spacing:1px;    
-    }    
-    
-    .section-title{    
-      color:var(--maroon);    
-      font-size:clamp(25px,4vw,36px);    
-      font-weight:900;    
-      margin:5px 0 28px;    
-    }    
-    
-    .founder-photo{    
-      width:min(620px,100%);    
-      margin:0 auto;    
-      padding:10px;    
-      background:#fff;    
-      border:3px solid var(--gold);    
-      border-radius:9px;    
-      box-shadow:var(--shadow);    
-    }    
-    
-    .founder-photo img{    
-      width:100%;    
-      aspect-ratio:4/3;    
-      object-fit:cover;    
-    }    
-    
-    .founder-name{    
-      color:var(--maroon);    
-      font-size:clamp(19px,3vw,25px);    
-      font-weight:900;    
-      margin-top:18px;    
-    }    
-    
-    .intro-box{    
-      width:min(950px,100%);    
-      margin:30px auto;    
-      padding:27px 30px;    
-      background:#fff;    
-      border-left:6px solid var(--gold);    
-      border-radius:9px;    
-      box-shadow:var(--shadow);    
-      text-align:left;    
-      font-size:17px;    
-    }    
-    
-    .intro-box strong{color:var(--maroon)}    
-    
-    .explore{    
-      display:inline-block;    
-      margin-top:3px;    
-      padding:12px 32px;    
-      border-radius:30px;    
-      background:var(--maroon);    
-      color:#fff;    
-      font-weight:900;    
-      border:2px solid var(--maroon);    
-      transition:.25s;    
-    }    
-    
-    .explore:hover{    
-      background:transparent;    
-      color:var(--maroon);    
-    }    
-    
-    section.content-section{padding:60px 20px}    
-    
-    .container{    
-      width:min(1120px,100%);    
-      margin:auto;    
-    }    
-    
-    .profile-grid{    
-      display:grid;    
-      grid-template-columns:1fr 1fr;    
-      gap:28px;    
-    }    
-    
-    .profile-card{    
-      background:#fff;    
-      border-radius:15px;    
-      padding:25px;    
-      text-align:center;    
-      box-shadow:var(--shadow);    
-      border-top:5px solid var(--gold);    
-    }    
-    
-    .profile-photo{    
-      width:min(360px,100%);    
-      margin:0 auto 20px;    
-      padding:8px;    
-      border:2px solid var(--gold);    
-      background:#fffaf1;    
-    }    
-    
-    .profile-photo img{    
-      width:100%;    
-      aspect-ratio:4/3;    
-      object-fit:cover;    
-    }    
-    
-    .profile-card h3{    
-      color:var(--maroon);    
-      font-size:22px;    
-      margin-bottom:9px;    
-    }    
-    
-    .profile-card p{    
-      color:var(--muted);    
-      font-size:16px;    
-    }    
-    
-    .message-section{    
-      background:#f7edda;    
-    }    
-    
-    .message-box{    
-      max-width:950px;    
-      margin:auto;    
-      background:#fff;    
-      padding:34px 38px;    
-      border-radius:15px;    
-      box-shadow:var(--shadow);    
-      border-top:5px solid var(--gold);    
-      font-size:17px;    
-    }    
-    
-    .message-box p{margin-bottom:15px}    
-    
-    .features{    
-      display:grid;    
-      grid-template-columns:1fr 1fr;    
-      gap:18px;    
-    }    
-    
-    .feature{    
-      background:#fff;    
-      padding:21px 23px;    
-      border-radius:12px;    
-      box-shadow:0 8px 25px rgba(61,16,25,.08);    
-      border-left:4px solid var(--gold);    
-    }    
-    
-    .feature strong{color:var(--maroon)}    
-    
-    footer{    
-      background:var(--dark);    
-      color:#f5e5bd;    
-      padding:30px 20px;    
-      text-align:center;    
-    }    
-    
-    footer p{margin:4px}    
-    .footer-small{font-size:13px;color:#d9c59a}    
-    
-    @media(max-width:800px){    
-      .profile-grid,.features{grid-template-columns:1fr}    
-      header{padding-right:80px}    
-    }    
-    
-    @media(max-width:560px){    
-      .top-strip{font-size:12px}    
-      header{padding:24px 65px 22px 12px}    
-      .menu-button{right:14px;top:23px}    
-      .side-menu{right:12px;top:78px}    
-      .hero{padding:45px 15px 40px}    
-      .intro-box,.message-box{padding:22px 18px;font-size:15px}    
-      section.content-section{padding:45px 15px}    
-    }    
-  </style>    </head>    <body>      <!-- TOP INFORMATION -->      <div class="top-strip">    
-    अखिल भारतीय गांधर्व महाविद्यालय मंडळ, मुंबई यांच्याशी मागील 65 वर्षांपासून संलग्नित    
-  </div>      <!-- HEADER -->      <header>    
-    <h1 class="main-title">अनवले संगीत महाविद्यालय, उदगीर</h1>    
-    <p class="subtitle">शास्त्रीय • उपशास्त्रीय • सुगम संगीत शिक्षण</p>    <!-- HAMBURGER -->    
-<button class="menu-button" id="menuButton" aria-label="मुख्य मेनू उघडा" aria-expanded="false">    
-  <span></span>    
-  <span></span>    
-  <span></span>    
-</button>    
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- MENU -->    
-<nav class="side-menu" id="sideMenu">    
-  <a href="events.html">१. कार्यक्रम / संमेलन</a>    
-  <a href="gallery.html">२. क्षणचित्रे</a>    
-  <a href="contact.html">३. संपर्क</a>    
-  <a href="admission.html">४. ॲडमिशन</a>    
-  <a href="history.html">५. अनवले संगीत महाविद्यालयाचा इतिहास</a>    
+<title>अनवले संगीत महाविद्यालय, उदगीर</title>
+
+<meta name="description" content="अनवले संगीत महाविद्यालय, उदगीर — गुरु-शिष्य परंपरा, शास्त्रीय संगीत शिक्षण आणि 70 वर्षांहून अधिक सांगीतिक वारसा.">
+<meta name="keywords" content="Anwale Sangeet Mahavidyalaya, Udgir, Anwale Music College, संगीत महाविद्यालय, उदगीर, रामदासजी अनवले, कृष्णा अनवले">
+<meta name="author" content="अनवले संगीत महाविद्यालय, उदगीर">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Noto Sans Devanagari', sans-serif;
+    background:#f8f3ea;
+    color:#302116;
+    line-height:1.8;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    background:linear-gradient(135deg,#4b0714,#720d20,#3a0610);
+    color:#fff;
+    text-align:center;
+    padding:35px 55px 30px;
+    position:relative;
+    border-bottom:4px solid #d4af37;
+}
+
+header h1{
+    font-size:clamp(28px,5vw,52px);
+    font-weight:800;
+    letter-spacing:1px;
+    color:#f6d77a;
+    margin-bottom:8px;
+}
+
+header p{
+    font-size:clamp(14px,2vw,19px);
+    color:#fff4cf;
+}
+
+/* MENU BUTTON */
+
+.menu-btn{
+    position:absolute;
+    top:22px;
+    right:22px;
+    width:48px;
+    height:48px;
+    border:1px solid #d4af37;
+    background:rgba(255,255,255,.08);
+    border-radius:8px;
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:6px;
+    z-index:1001;
+}
+
+.menu-btn span{
+    width:25px;
+    height:3px;
+    background:#f6d77a;
+    border-radius:3px;
+}
+
+/* SIDE MENU */
+
+.side-menu{
+    position:fixed;
+    top:0;
+    right:-330px;
+    width:320px;
+    height:100vh;
+    background:#fffaf1;
+    box-shadow:-5px 0 20px rgba(0,0,0,.25);
+    z-index:1000;
+    padding:85px 25px 30px;
+    transition:.35s ease;
+    overflow-y:auto;
+}
+
+.side-menu.open{
+    right:0;
+}
+
+.side-menu h3{
+    color:#720d20;
+    border-bottom:2px solid #d4af37;
+    padding-bottom:12px;
+    margin-bottom:18px;
+}
+
+.side-menu button{
+    width:100%;
+    text-align:left;
+    border:0;
+    background:transparent;
+    padding:14px 10px;
+    margin-bottom:5px;
+    border-radius:6px;
+    font-family:inherit;
+    font-size:16px;
+    color:#35141b;
+    cursor:pointer;
+}
+
+.side-menu button:hover{
+    background:#f1e3c5;
+    color:#720d20;
+}
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.5);
+    z-index:999;
+    display:none;
+}
+
+.overlay.show{
+    display:block;
+}
+
+/* ================= MAIN ================= */
+
+main{
+    max-width:1200px;
+    margin:auto;
+    padding:30px 18px 60px;
+}
+
+.page{
+    display:none;
+}
+
+.page.active{
+    display:block;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    text-align:center;
+    padding:30px 10px 45px;
+}
+
+.hero h2{
+    color:#720d20;
+    font-size:clamp(24px,4vw,38px);
+    margin-bottom:22px;
+}
+
+.hero-subtitle{
+    color:#80621d;
+    font-weight:600;
+    font-size:18px;
+}
+
+/* ================= FOUNDER ================= */
+
+.founder-box{
+    background:#fff;
+    border:2px solid #d4af37;
+    border-radius:18px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(75,7,20,.12);
+}
+
+.founder-box img{
+    width:min(100%,620px);
+    max-height:620px;
+    object-fit:cover;
+    border-radius:12px;
+    border:6px solid #f0dfae;
+    display:block;
+    margin:0 auto 20px;
+}
+
+.section-label{
+    color:#80621d;
+    font-size:18px;
+    font-weight:700;
+}
+
+.founder-name{
+    color:#720d20;
+    font-size:clamp(22px,4vw,34px);
+    font-weight:800;
+    margin:5px 0 20px;
+}
+
+.info-box{
+    background:linear-gradient(135deg,#fff9eb,#f6ead0);
+    border-left:5px solid #d4af37;
+    padding:22px;
+    border-radius:10px;
+    text-align:justify;
+    margin-top:20px;
+}
+
+/* ================= BUTTON ================= */
+
+.gold-btn{
+    display:inline-block;
+    margin-top:25px;
+    background:linear-gradient(135deg,#b7861b,#e2c15c);
+    color:#3b1c05;
+    border:none;
+    padding:13px 28px;
+    border-radius:30px;
+    font-family:inherit;
+    font-weight:800;
+    font-size:16px;
+    cursor:pointer;
+    box-shadow:0 6px 15px rgba(0,0,0,.15);
+    transition:.25s;
+}
+
+.gold-btn:hover{
+    transform:translateY(-2px);
+}
+
+/* ================= SECTION ================= */
+
+.section-title{
+    text-align:center;
+    color:#720d20;
+    font-size:clamp(25px,4vw,38px);
+    margin:15px 0 30px;
+    font-weight:800;
+}
+
+.section-title::after{
+    content:"";
+    display:block;
+    width:90px;
+    height:3px;
+    background:#d4af37;
+    margin:10px auto 0;
+}
+
+/* ================= PROFILE ================= */
+
+.profile{
+    background:#fff;
+    border-radius:18px;
+    padding:25px;
+    margin:35px 0;
+    border:1px solid #e2c76c;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.profile img{
+    width:min(100%,500px);
+    max-height:550px;
+    object-fit:cover;
+    display:block;
+    margin:0 auto 20px;
+    border-radius:12px;
+    border:5px solid #f0dfae;
+}
+
+.profile h3{
+    color:#720d20;
+    text-align:center;
+    font-size:28px;
+}
+
+.profile .designation{
+    text-align:center;
+    color:#80621d;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+/* ================= MESSAGE ================= */
+
+.message{
+    background:linear-gradient(135deg,#4b0714,#720d20);
+    color:#fff;
+    padding:30px;
+    border-radius:18px;
+    margin:35px 0;
+    box-shadow:0 10px 30px rgba(75,7,20,.2);
+}
+
+.message h2{
+    color:#f6d77a;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.message p{
+    text-align:justify;
+}
+
+/* ================= SPECIAL FEATURES ================= */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+    gap:20px;
+}
+
+.feature-card{
+    background:#fff;
+    padding:23px;
+    border-radius:14px;
+    border-top:4px solid #d4af37;
+    box-shadow:0 6px 20px rgba(0,0,0,.08);
+}
+
+.feature-card h3{
+    color:#720d20;
+    font-size:19px;
+    margin-bottom:8px;
+}
+
+/* ================= PROGRAMS ================= */
+
+.program-list{
+    display:grid;
+    gap:16px;
+}
+
+.program-card{
+    background:#fff;
+    border-left:5px solid #d4af37;
+    padding:18px 20px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.07);
+}
+
+.program-card strong{
+    color:#720d20;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:22px;
+}
+
+.gallery-card{
+    background:#fff;
+    padding:12px;
+    border-radius:13px;
+    box-shadow:0 6px 20px rgba(0,0,0,.1);
+}
+
+.gallery-card img{
+    width:100%;
+    height:270px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+.gallery-card:first-child{
+    grid-column:1/-1;
+}
+
+.gallery-card:first-child img{
+    height:min(600px,60vw);
+}
+
+.gallery-card p{
+    padding:13px 7px 5px;
+    text-align:justify;
+    font-size:14px;
+}
+
+/* ================= HISTORY ================= */
+
+.history{
+    background:#fff;
+    padding:28px;
+    border-radius:16px;
+    box-shadow:0 7px 25px rgba(0,0,0,.08);
+}
+
+.history h3{
+    color:#720d20;
+    margin:25px 0 10px;
+}
+
+.history p{
+    text-align:justify;
+    margin-bottom:16px;
+}
+
+.quote{
+    border-left:5px solid #d4af37;
+    background:#faf2df;
+    padding:18px;
+    font-style:italic;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-card{
+    max-width:700px;
+    margin:auto;
+    background:#fff;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 8px 25px rgba(0,0,0,.1);
+    text-align:center;
+}
+
+.contact-card h3{
+    color:#720d20;
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.contact-item{
+    margin:16px 0;
+    padding:14px;
+    background:#faf3e2;
+    border-radius:8px;
+}
+
+/* ================= ADMISSION ================= */
+
+.admission{
+    max-width:750px;
+    margin:auto;
+    text-align:center;
+    background:#fff;
+    padding:40px 25px;
+    border-radius:18px;
+    box-shadow:0 8px 25px rgba(0,0,0,.1);
+}
+
+.admission h2{
+    color:#720d20;
+}
+
+/* ================= BACK BUTTON ================= */
+
+.back-btn{
+    margin-bottom:25px;
+    background:#720d20;
+    color:white;
+    border:0;
+    padding:10px 20px;
+    border-radius:25px;
+    font-family:inherit;
+    cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#30050d;
+    color:#fff;
+    text-align:center;
+    padding:30px 18px;
+    border-top:4px solid #d4af37;
+}
+
+footer h3{
+    color:#f6d77a;
+    margin-bottom:10px;
+}
+
+footer p{
+    margin:5px 0;
+}
+
+.footer-small{
+    margin-top:18px;
+    color:#e7d9ad;
+    font-size:14px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    header{
+        padding:28px 60px 25px 15px;
+    }
+
+    .menu-btn{
+        top:15px;
+        right:15px;
+    }
+
+    .side-menu{
+        width:290px;
+    }
+
+    main{
+        padding:20px 12px 45px;
+    }
+
+    .founder-box,
+    .profile,
+    .history{
+        padding:16px;
+    }
+
+    .message{
+        padding:22px 17px;
+    }
+
+    .gallery-card:first-child img{
+        height:350px;
+    }
+
+}
+
+/* ================= PRINT ================= */
+
+@media print{
+    .menu-btn,
+    .side-menu,
+    .overlay,
+    .gold-btn,
+    .back-btn{
+        display:none!important;
+    }
+
+    .page{
+        display:block!important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <button class="menu-btn" onclick="openMenu()" aria-label="मेनू उघडा">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <h1>अनवले संगीत महाविद्यालय, उदगीर</h1>
+
+    <p>
+        अखिल भारतीय गांधर्व महाविद्यालय मंडळ, मुंबई
+        यांच्याशी मागील 65 वर्षांपासून संलग्नित
+    </p>
+
+</header>
+
+
+<!-- ================= SIDE MENU ================= -->
+
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+<nav class="side-menu" id="sideMenu">
+
+    <h3>मुख्य मेनू</h3>
+
+    <button onclick="showPage('home')">
+        🏠 मुख्य पृष्ठ
+    </button>
+
+    <button onclick="showPage('programs')">
+        🎵 कार्यक्रम / संमेलन
+    </button>
+
+    <button onclick="showPage('gallery')">
+        📷 क्षणचित्रे
+    </button>
+
+    <button onclick="showPage('contact')">
+        ☎ संपर्क
+    </button>
+
+    <button onclick="showPage('admission')">
+        📝 ॲडमिशन
+    </button>
+
+    <button onclick="showPage('history')">
+        📜 अनवले संगीत महाविद्यालयाची संक्षिप्त माहिती
+    </button>
+
 </nav>
 
-  </header>      <!-- FOUNDER -->      <main>    <section class="hero">    
-  <div class="container">    
 
-    <div class="section-label">प्रेरणास्थान व श्रद्धास्थान</div>    
+<main>
 
-    <h2 class="section-title">    
-      स्व. सुरमणी पं. रामदासजी अनवले गुरुजी    
-    </h2>    
+<!-- =========================================================
+     HOME PAGE
+========================================================= -->
 
-    <div class="founder-photo">    
-      <img src="founder.jpeg"    
-           alt="स्व. सुरमणी पं. रामदासजी अनवले गुरुजी">    
-    </div>    
+<section id="home" class="page active">
 
-    <div class="founder-name">    
-      सुरमणी स्व. पं. रामदासजी अनवले गुरुजी    
-    </div>    
+    <div class="hero">
 
-    <div class="intro-box">    
-      <p>    
-        सुरमणी पं. रामदासजी अनवले गुरुजी यांनी मराठवाड्यात    
-        <strong>१९५६ साली ‘अनवले संगीत महाविद्यालया’ची स्थापना</strong>    
-        मराठवाड्यात दुसऱ्यांदा तथा लातूर जिल्ह्यात पहिल्यांदा केली.    
-        पं. अनवले गुरुजी यांनी मराठवाड्यातील पहिले आकाशवाणी कलावंत    
-        होण्याचा मान पटकावला.    
-      </p>    
+        <div class="hero-subtitle">
+            प्रेरणास्थान व श्रद्धास्थान
+        </div>
 
-      <p>    
-        <strong>या महान सांगीतिक परंपरेस साक्षात नमन.</strong>    
-      </p>    
-    </div>    
-
-    <a href="history.html" class="explore">    
-      SITE EXPLORE →    
-    </a>    
-
-  </div>    
-</section>    
+    </div>
 
 
-<!-- DIRECTOR / PRINCIPAL -->    
-<section class="content-section">    
-  <div class="container">    
+    <!-- FOUNDER -->
 
-    <div class="profile-grid">    
+    <div class="founder-box">
 
-      <article class="profile-card">    
-        <div class="profile-photo">    
-          <img src="director.jpeg"    
-               alt="पं. डॉ. कृष्णा रामदासजी अनवले">    
-        </div>    
+        <img src="founder.jpeg"
+             alt="स्व. सुरमणी पं. रामदासजी अनवले गुरुजी">
 
-        <h3>पं. डॉ. कृष्णा रामदासजी अनवले</h3>    
+        <div class="section-label">
+            संस्थापक
+        </div>
 
-        <p>    
-          मराठवाड्यातील राम कदम संगीत पुरस्कारप्राप्त,    
-          ज्येष्ठ सुप्रसिद्ध गायक तथा संगीत विषयात पीएच.डी.    
-          मिळवणारे मराठवाड्यातील पहिले पदवीधारक.    
-          मागील 28 वर्षांपासून हावगीस्वामी महाविद्यालय येथे    
-          संगीत विभागाध्यक्ष. स्वामी रामानंद तीर्थ मराठवाडा    
-          विद्यापीठाच्या संगीत अभ्यास मंडळाचे माजी अध्यक्ष.    
-        </p>    
-      </article>    
+        <div class="founder-name">
+            स्व. सुरमणी पं. रामदासजी अनवले गुरुजी
+        </div>
 
+        <div class="info-box">
 
-      <article class="profile-card">    
-        <div class="profile-photo">    
-          <img src="principal.jpeg"    
-               alt="प्रा. श्री. ऋषिकेश कृ. अनवले">    
-        </div>    
+            <p>
+                सुरमणी पं. रामदासजी अनवले गुरुजी यांनी मराठवाड्यात
+                1956 साली 'अनवले संगीत महाविद्यालयाची' स्थापना
+                मराठवाड्यात दुसऱ्यांदा तथा लातूर जिल्ह्यात पहिल्यांदा केली.
+                पं. अनवले गुरुजी हे मराठवाड्यातील पहिले आकाशवाणी कलावंत
+                होण्याचा मान पटकावणारे महान संगीत साधक होते.
+                त्यांच्या पवित्र स्मृतींना साक्षात नमन.
+            </p>
 
-        <h3>प्रा. श्री. ऋषिकेश कृ. अनवले</h3>    
+        </div>
 
-        <p>    
-          संगीत विशारद — गायन<br>    
-          संगीत विशारद — तबला    
-        </p>    
-      </article>    
+        <button class="gold-btn" onclick="showPage('history')">
+            Site Explore →
+        </button>
 
-    </div>    
-
-  </div>    
-</section>    
+    </div>
 
 
-<!-- DIRECTOR MESSAGE -->    
-<section class="content-section message-section">    
-  <div class="container">    
+    <!-- DIRECTOR -->
 
-    <div class="section-label" style="text-align:center;">    
-      आमचे ध्येय    
-    </div>    
+    <div class="profile">
 
-    <h2 class="section-title" style="text-align:center;">    
-      संचालक यांचा संदेश    
-    </h2>    
+        <img src="director.jpeg"
+             alt="पं. डॉ. कृष्णा रामदासजी अनवले">
 
-    <div class="message-box">    
+        <h3>
+            पं. डॉ. कृष्णा रामदासजी अनवले
+        </h3>
 
-      <p>सर्व संगीत रसिक साधकांना नमस्कार.</p>    
+        <div class="designation">
+            संगीत साधक • गायक • संशोधक • मार्गदर्शक
+        </div>
 
-      <p>    
-        “संगीत हे केवळ कला नाही, तर संस्कार, साधना आणि जीवनाला    
-        समृद्ध करणारे शाश्वत ज्ञान आहे. गुरु-शिष्य परंपरेतून    
-        लाभलेले हे अमूल्य सांगीतिक शिक्षण पुढील पिढ्यांपर्यंत    
-        पोहोचविणे ही आमची जबाबदारी आहे.    
-      </p>    
+        <p>
+            मराठवाड्यातील राम कदम संगीत पुरस्कार प्राप्त ज्येष्ठ
+            सुप्रसिद्ध गायक तथा संगीत विषयात पीएच.डी. मिळवणारे
+            मराठवाड्यातील पहिले पदवीधारक. मागील 28 वर्षांपासून
+            हावगीस्वामी महाविद्यालय येथे संगीत विभागाध्यक्ष.
+            स्वामी रामानंद तीर्थ मराठवाडा विद्यापीठाच्या संगीत
+            अभ्यास मंडळाचे माजी अध्यक्ष.
+        </p>
 
-      <p>    
-        याच पवित्र ध्येयाने, संगीत शिक्षणाची ही ज्ञानज्योत    
-        अविरत आणि तेवत ठेवत, आम्ही आमच्या संस्थेमार्फत    
-        शास्त्रीय, उपशास्त्रीय व सुगम संगीताचे दर्जेदार शिक्षण    
-        विद्यार्थ्यांना देत आहोत. परंपरेचा सन्मान आणि आधुनिक    
-        काळाची गरज यांचा सुंदर समन्वय साधत, प्रत्येक विद्यार्थ्याच्या    
-        सांगीतिक प्रतिभेला योग्य दिशा देणे हेच आमचे ध्येय आहे.”    
-      </p>    
-
-    </div>    
-
-  </div>    
-</section>    
+    </div>
 
 
-<!-- SPECIAL FEATURES -->    
-<section class="content-section">    
-  <div class="container">    
+    <!-- PRINCIPAL -->
 
-    <h2 class="section-title" style="text-align:center;">    
-      महाविद्यालयाच्या काही विशेष बाबी    
-    </h2>    
+    <div class="profile">
 
-    <div class="features">    
+        <img src="principal.jpeg"
+             alt="प्रा. श्री. ऋषिकेश कृ. अनवले">
 
-      <div class="feature">    
-        <strong>१. ऐतिहासिक सांगीतिक वैभव:</strong>    
-        पाच पिढ्यांचा समृद्ध वारसा लाभलेले, मराठवाड्यातील दुसरे    
-        आणि लातूर जिल्ह्यातील पहिले अग्रगण्य संगीत महाविद्यालय.    
-      </div>    
+        <h3>
+            प्रा. श्री. ऋषिकेश कृ. अनवले
+        </h3>
 
-      <div class="feature">    
-        <strong>२. उदगीरातील पहिला ‘तंबोरा’:</strong>    
-        महाविद्यालयाचे संस्थापक सुरमणी स्व. पं. रामदासजी अनवले    
-        गुरुजी यांनी १९४९ साली ग्वाल्हेरवरून उदगीरात पहिला    
-        तंबोरा आणला.    
-      </div>    
+        <div class="designation">
+            संगीत विशारद — गायन | संगीत विशारद — तबला
+        </div>
 
-      <div class="feature">    
-        <strong>३. परंपरेचा सुवर्ण इतिहास:</strong>    
-        70 वर्षांपेक्षा अधिक काळ गुरु-शिष्य परंपरा जपणारी    
-        आणि दर्जेदार व्यावसायिक कलाकार घडवणारी उदगीरची    
-        अग्रगण्य संस्था.    
-      </div>    
+    </div>
 
-      <div class="feature">    
-        <strong>४. शासनाची ‘वृद्ध कलावंतांना मानधन’ योजना:</strong>    
-        १९७० पासून आजतागायत शेकडो कलावंतांना मानधन मिळवून    
-        देण्यासाठी यश तथा शिफारस.    
-      </div>    
 
-      <div class="feature">    
-        <strong>५. जिल्ह्यातील पहिले मानाचे स्थान:</strong>    
-        लातूर जिल्ह्यात सांगीतिक शिक्षणाची मुहूर्तमेढ रोवणारे,    
-        शास्त्रीय व सुगम संगीताचे सर्वात जुने अधिकृत केंद्र.    
-      </div>    
+    <!-- DIRECTOR MESSAGE -->
 
-      <div class="feature">    
-        <strong>६. ४ पिढ्यांचा अनुभव:</strong>    
-        पाच पिढ्यांच्या कडक शिस्तीत आणि अनुभवी मार्गदर्शनाखाली    
-        संगीत क्षेत्रात पदवी व उज्ज्वल करिअर घडवण्याची सुवर्णसंधी.    
-      </div>    
+    <div class="message">
 
-      <div class="feature">    
-        <strong>७. मराठवाड्याची अधिकृत सांगाती:</strong>    
-        ऐतिहासिक वारसा आणि प्रमाणित अभ्यासक्रमाच्या बळावर    
-        विद्यार्थ्यांचे सांगीतिक भविष्य सुरक्षित करणारी नामांकित संस्था.    
-      </div>    
+        <h2>संचालक यांचा संदेश</h2>
 
-      <div class="feature">    
-        <strong>८. अतिरिक्त गुणांचे यश:</strong>    
-        अ. भा. गा. म. वि. मंडळाच्या माध्यमातून शेकडो विद्यार्थ्यांना    
-        १० वीमध्ये अतिरिक्त गुण मिळविण्यात सुयश.    
-      </div>    
+        <p>
+            सर्व संगीत रसिक साधकांना नमस्कार.
+        </p>
 
-    </div>    
+        <br>
 
-  </div>    
+        <p>
+            "संगीत हे केवळ कला नाही, तर संस्कार, साधना आणि जीवनाला
+            समृद्ध करणारे शाश्वत ज्ञान आहे. गुरु-शिष्य परंपरेतून
+            लाभलेले हे अमूल्य सांगीतिक शिक्षण पुढील पिढ्यांपर्यंत
+            पोहोचविणे ही आमची जबाबदारी आहे.
+        </p>
+
+        <br>
+
+        <p>
+            याच पवित्र ध्येयाने, संगीत शिक्षणाची ही ज्ञानज्योत
+            अविरत आणि तेवत ठेवत, आम्ही आमच्या संस्थेमार्फत
+            शास्त्रीय, उपशास्त्रीय व सुगम संगीताचे दर्जेदार शिक्षण
+            विद्यार्थ्यांना देत आहोत. परंपरेचा सन्मान आणि आधुनिक
+            काळाची गरज यांचा सुंदर समन्वय साधत, प्रत्येक विद्यार्थ्याच्या
+            सांगीतिक प्रतिभेला योग्य दिशा देणे हेच आमचे ध्येय आहे.”
+        </p>
+
+    </div>
+
+
+    <!-- SPECIAL FEATURES -->
+
+    <h2 class="section-title">
+        महाविद्यालयाच्या विशेष बाबी
+    </h2>
+
+    <div class="features">
+
+        <div class="feature-card">
+            <h3>१. ऐतिहासिक सांगीतिक वैभव</h3>
+            <p>
+                पाच पिढ्यांचा समृद्ध वारसा लाभलेले, मराठवाड्यातील
+                दुसरे आणि लातूर जिल्ह्यातील पहिले अग्रगण्य
+                संगीत महाविद्यालय.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>२. उदगीरातील पहिला 'तंबोरा'</h3>
+            <p>
+                महाविद्यालयाचे संस्थापक सुरमणी स्व. पं. रामदासजी
+                अनवले गुरुजी यांनीच 1949 साली ग्वाल्हेरवरून
+                उदगीरात पहिला तंबोरा आणला.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>३. परंपरेचा सुवर्ण इतिहास</h3>
+            <p>
+                70 वर्षांपेक्षा अधिक काळ गुरु-शिष्य परंपरा जपणारी
+                आणि दर्जेदार व्यावसायिक कलाकार घडवणारी
+                उदगीरची अग्रगण्य संस्था.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>४. शासनाचे 'वृद्ध कलावंतांना मानधन' योजना</h3>
+            <p>
+                या योजनेत 1970 पासून आजतागायत शेकडो कलावंतांना
+                मानधन मिळवून देण्यात यश तथा शिफारस.
+                मराठवाड्यातील उल्लेखनीय संस्था.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>५. जिल्ह्यातील पहिले मानाचे स्थान</h3>
+            <p>
+                लातूर जिल्ह्यात सांगीतिक शिक्षणाची मुहूर्तमेढ
+                रोवणारे, शास्त्रीय व सुगम संगीताचे सर्वात जुने
+                आणि अधिकृत केंद्र.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>६. पाच पिढ्यांचा अनुभव</h3>
+            <p>
+                पाच पिढ्यांच्या कडक शिस्तीत आणि अनुभवी मार्गदर्शनाखाली
+                संगीत क्षेत्रात पदवी व उज्ज्वल करिअर घडवण्याची
+                सुवर्णसंधी.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>७. मराठवाड्याची अधिकृत सांगाती</h3>
+            <p>
+                ऐतिहासिक वारसा आणि प्रमाणित अभ्यासक्रमाच्या बळावर
+                विद्यार्थ्यांचे सांगीतिक भविष्य सुरक्षित करणारी
+                नामांकित संस्था.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>८. अतिरिक्त गुण मिळविण्यात सुयश</h3>
+            <p>
+                अखिल भारतीय गांधर्व महाविद्यालय मंडळाच्या माध्यमातून
+                शेकडो विद्यार्थ्यांना दहावीच्या परीक्षेत अतिरिक्त
+                गुण मिळविण्यात सुयश.
+            </p>
+        </div>
+
+    </div>
+
 </section>
 
-  </main>      <!-- FOOTER -->      <footer>    
-    <p>© संचालक, अनवले संगीत महाविद्यालय, उदगीर.</p>    
-    <p>संपर्क / पत्ता — चौबारा रोड, किल्ला रोड, जवळ उदगीर</p>    
-    <p>मो. 9970911251</p>    
-    <p class="footer-small">सर्व हक्क सुरक्षित.</p>    
-  </footer>      <!-- MENU SCRIPT -->      <script>    
-    const menuButton = document.getElementById("menuButton");    
-    const sideMenu = document.getElementById("sideMenu");    
-    
-    menuButton.addEventListener("click", function () {    
-      sideMenu.classList.toggle("show");    
-    
-      const isOpen = sideMenu.classList.contains("show");    
-      menuButton.setAttribute("aria-expanded", isOpen);    
-    });    
-    
-    document.addEventListener("click", function(event) {    
-      if (!sideMenu.contains(event.target) &&    
-          !menuButton.contains(event.target)) {    
-        sideMenu.classList.remove("show");    
-        menuButton.setAttribute("aria-expanded", "false");    
-      }    
-    });    
-  </script>    </body>    
+
+<!-- =========================================================
+     PROGRAMS PAGE
+========================================================= -->
+
+<section id="programs" class="page">
+
+    <button class="back-btn" onclick="showPage('home')">
+        ← मुख्य पृष्ठावर परत
+    </button>
+
+    <h2 class="section-title">
+        कार्यक्रम / संमेलन
+    </h2>
+
+    <div class="info-box">
+        अनवले संगीत महाविद्यालयातर्फे खालील समारोह व
+        सांगीतिक उपक्रम आयोजित झाले आहेत.
+    </div>
+
+    <br>
+
+    <div class="program-list">
+
+        <div class="program-card">
+            <strong>१. बाळगांदर्व संगीत समारोह</strong><br>
+            1967
+        </div>
+
+        <div class="program-card">
+            <strong>२. पं. पलूस्कर संगीत समारोह</strong><br>
+            1977 / 1989
+        </div>
+
+        <div class="program-card">
+            <strong>३. राज्यस्तरीय सुगम गीत गायन स्पर्धा</strong><br>
+            1978 / 1999
+        </div>
+
+        <div class="program-card">
+            <strong>४. बाळगांदर्व व पलूस्कर पुण्यतिथी महोत्सव</strong><br>
+            1998
+        </div>
+
+        <div class="program-card">
+            <strong>५. सुरमणी संगीत समारोह</strong><br>
+            2002
+        </div>
+
+        <div class="program-card">
+            <strong>६. पं. रामदासजी अनवले गुरुजी संगीत समारोह</strong><br>
+            2006 / 2010 / 2012 / 2019
+        </div>
+
+        <div class="program-card">
+            <strong>७. राज्यस्तरीय शास्त्रीय गायन स्पर्धा</strong><br>
+            2013 / 2014 / 2019
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     GALLERY PAGE
+========================================================= -->
+
+<section id="gallery" class="page">
+
+    <button class="back-btn" onclick="showPage('home')">
+        ← मुख्य पृष्ठावर परत
+    </button>
+
+    <h2 class="section-title">
+        क्षणचित्रे
+    </h2>
+
+    <div class="gallery">
+
+        <div class="gallery-card">
+            <img src="music_14.jpeg"
+                 alt="सुरमणी पं. रामदासजी अनवले गुरुजी">
+
+            <p>
+                सांस्कृतिक कार्य संचालनालय, मुंबई आयोजित विविध
+                कला महोत्सवात गायन सादर करताना सुरमणी पं. रामदासजी
+                अनवले गुरुजी. तबला — डॉ. कृष्णा अनवले.
+                संवादिनी — श्री रतिकांत घोगरे.
+            </p>
+        </div>
+
+        <div class="gallery-card">
+            <img src="music_1.jpeg" alt="वृत्त">
+            <p>वृत्त</p>
+        </div>
+
+        <div class="gallery-card">
+            <img src="music_2.jpeg" alt="वृत्त">
+            <p>वृत्त</p>
+        </div>
+
+        <div class="gallery-card">
+            <img src="music_3.jpeg" alt="वृत्त">
+            <p>वृत्त</p>
+        </div>
+
+        <div class="gallery-card">
+            <img src="music_4.jpeg" alt="वृत्त">
+            <p>वृत्त</p>
+        </div>
+
+        <div class="gallery-card">
+            <img src="music_5.jpeg" alt="वृत्त">
+            <p>वृत्त</p>
+        </div>
+
+        <div class="gallery-card">
+            <img src="music_6.jpeg" alt="वृत्त">
+            <p>वृत्त</p>
+        </div>
+
+        <div class="gallery-card">
+            <img src="music_7.jpeg" alt="वृत्त">
+            <p>वृत्त</p>
+        </div>
+
+        <div class="gallery-card">
+            <img src="music_8.jpeg" alt="वृत्त">
+            <p>वृत्त</p>
+        </div>
+
+        <div class="gallery-card">
+            <img src="music_9.jpeg"
+                 alt="विद्यार्थ्यांना मार्गदर्शन">
+
+            <p>
+                महाविद्यालयात विद्यार्थ्यांना मार्गदर्शन करताना
+                सुरमणी स्व. पं. रामदासजी अनवले गुरुजी व शिष्य मंडळ.
+            </p>
+        </div>
+
+        <div class="gallery-card">
+            <img src="music_10.jpeg"
+                 alt="राज्यस्तरीय संगीत समारोह">
+
+            <p>
+                सुरमणी पं. रामदासजी अनवले गुरुजी यांच्या
+                स्मृतिप्रीत्यर्थ आयोजित राज्यस्तरीय संगीत समारोहात
+                मार्गदर्शन करताना पं. डॉ. कृष्णराज अनवले.
+                सोबत पं. गिरीश गोसावी, प्रा. श्री श्यामराव संगमकर,
+                ॲड. माधवरावजी पाटील कौलखेडकर साहेब,
+                प्रा. विजयकुमार धायगुडे इ.
+            </p>
+        </div>
+
+        <div class="gallery-card">
+            <img src="music_11.jpeg"
+                 alt="पं. गिरीश जी गोसावी">
+
+            <p>
+                सुरमणी पं. रामदासजी अनवले गुरुजी यांच्या
+                स्मृतिप्रीत्यर्थ आयोजित राज्यस्तरीय संगीत समारोहात
+                गायन सादर करताना पं. गिरीश जी गोसावी.
+                तबला — प्रा. सुधीर अनवले.
+            </p>
+        </div>
+
+        <div class="gallery-card">
+            <img src="music_12.jpeg"
+                 alt="राज्यस्तरीय शास्त्रीय गायन स्पर्धा">
+
+            <p>
+                सुरमणी पं. रामदासजी अनवले गुरुजी राज्यस्तरीय
+                शास्त्रीय गायन स्पर्धेत प्रास्ताविक सादर करताना
+                डॉ. कृष्णा अनवले, आमदार संजयजी बनसोडे,
+                अध्यक्ष श्री प्रभाकर भांडारे, मुंबई,
+                डॉ. अनया थत्ते, मुंबई, प्रा. विजयकुमार पाटील,
+                प्रा. विजयकुमार धायगुडे, प्रा. वेदांग धाराशिवे,
+                प्रा. सुधीर अनवले.
+            </p>
+        </div>
+
+        <div class="gallery-card">
+            <img src="music_13.jpeg"
+                 alt="डॉ. पं. कृष्णराज अनवले">
+
+            <p>
+                शास्त्रीय गायन सादर करताना डॉ. पं. कृष्णराज अनवले जी.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT PAGE
+========================================================= -->
+
+<section id="contact" class="page">
+
+    <button class="back-btn" onclick="showPage('home')">
+        ← मुख्य पृष्ठावर परत
+    </button>
+
+    <h2 class="section-title">
+        संपर्क
+    </h2>
+
+    <div class="contact-card">
+
+        <h3>
+            अनवले संगीत महाविद्यालय, उदगीर
+        </h3>
+
+        <div class="contact-item">
+            📍 <strong>पत्ता</strong><br>
+            चौबारा रोड, किल्ला रोड, जवळ उदगीर
+        </div>
+
+        <div class="contact-item">
+            📞 <strong>मोबाईल</strong><br>
+            <a href="tel:9970911251">
+                9970911251
+            </a>
+        </div>
+
+        <div class="contact-item">
+            ✉ <strong>ई-मेल</strong><br>
+            <a href="mailto:anwalemusiccollege1954.org@gmail.com">
+                anwalemusiccollege1954.org@gmail.com
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ADMISSION PAGE
+========================================================= -->
+
+<section id="admission" class="page">
+
+    <button class="back-btn" onclick="showPage('home')">
+        ← मुख्य पृष्ठावर परत
+    </button>
+
+    <h2 class="section-title">
+        ॲडमिशन
+    </h2>
+
+    <div class="admission">
+
+        <h2>
+            महाविद्यालयात प्रवेश घेण्यासाठी
+        </h2>
+
+        <p>
+            ऑनलाईन प्रवेश फॉर्म येथे भरावा.
+        </p>
+
+        <a
+        class="gold-btn"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSeUw4FlVOqinXB_roeYjFgIibNuXazgymtMcIA2vSkueS8Jyw/viewform?usp=header"
+        target="_blank"
+        rel="noopener noreferrer">
+
+            ऑनलाइन प्रवेश फॉर्म भरा →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     HISTORY PAGE
+========================================================= -->
+
+<section id="history" class="page">
+
+    <button class="back-btn" onclick="showPage('home')">
+        ← मुख्य पृष्ठावर परत
+    </button>
+
+    <h2 class="section-title">
+        अनवले संगीत महाविद्यालयाचा इतिहास
+    </h2>
+
+    <div class="history">
+
+        <h3>
+            अनवले संगीत विद्यालयाची स्थापना
+        </h3>
+
+        <p>
+            अभिजात संगीताची शास्त्रोक्त तालीम घेतल्यानंतर त्यांनी
+            आपला मोर्चा उदगीर या आपल्या जन्मभूमीकडे वळविला.
+            त्यांनी पाहिले की, उदगीरसारख्या ग्रामीण भागात अभिजात
+            संगीत शिकविणारे एकही विद्यालय नाही. म्हणूनच १९५४ साली
+            गानप्रचारार्थ त्यांनी 'अनवले संगीत विद्यालया'ची स्थापना केली.
+            अशा प्रकारे हे संगीत विद्यालय लातूर जिल्ह्यातील पहिले तर
+            मराठवाड्यातील दुसरे संगीत महाविद्यालय ठरले.
+            यापूर्वी अण्णासाहेब गुंजकर यांनी १९२७ साली नांदेड येथे
+            गायन-वादन विद्यालयाची मुहूर्तमेढ रोवली होती.
+        </p>
+
+        <h3>
+            ज्ञानयज्ञाची सुरुवात
+        </h3>
+
+        <p>
+            पं. अनवले संगीत विद्यालयातील पहिले विद्यार्थी होण्याचा
+            बहुमान पटकावला तो कृष्णचंद्र ज्ञाते यांनी. अशा प्रकारे
+            या विद्यालयाच्या माध्यमातून उदगीर परिसरात शास्त्रीय
+            संगीताचा ज्ञानयज्ञ सुरू झाला. यातून उदगीरसारख्या
+            छोट्याशा गावात रागविद्येची अर्चना निष्ठेने चालू राहिली.
+        </p>
+
+        <p>
+            या घटनेचा उल्लेख मुंबई येथील नेहरू सेंटरच्या वतीने
+            प्रकाशित झालेल्या 'दिशा' या पुस्तिकेत केला आहे.
+        </p>
+
+        <div class="quote">
+            He is the founder of Anavale Sangit Mahavidhyalaya,
+            which during the last 40 years has benifited thousend
+            of music stu-dents.
+        </div>
+
+        <h3>
+            ग्रामीण भागातील विद्यार्थ्यांसाठी ज्ञानगंगा
+        </h3>
+
+        <p>
+            अशाप्रकारे त्यांनी ग्रामीण भागातील विद्यार्थ्यांसाठी
+            भगीरथाप्रमाणे ज्ञानगंगा उदगीर येथे आणली. यातून हजारो
+            विद्यार्थ्यांनी आपली ओंजळ तालासुरांनी भरली. पैशांचा
+            विचार न करता गरजू व होतकरू विद्यार्थ्यांना त्यांनी
+            भरभरून दिले.
+        </p>
+
+        <p>
+            यासंदर्भात लातूर जिल्हा रौप्यमहोत्सवी वर्षानिमित्त
+            'दै. लोकमत' ने प्रकाशित केलेल्या विशेष पुरवणीत लिहिले आहे की,
+        </p>
+
+        <div class="quote">
+            "पं. रामदास अनवले यांनी उदगीर येथे पहिला तंबोरा आणला.
+            संगीत महाविद्यालयाच्या स्थापनेपासून हजारो विद्यार्थी
+            दूरदर्शन, आकाशवाणी, संगीत शिक्षक व प्राध्यापक म्हणून
+            कार्यरत आहेत. आजही अंध, अपंग, मागासवर्गीय, गरजू व
+            होतकरू विद्यार्थ्यांना विनामूल्य मार्गदर्शन केले जाते."
+        </div>
+
+        <h3>
+            सर्वसमावेशक संगीत शिक्षण
+        </h3>
+
+        <p>
+            पंडितजींनी स्वतः गरिबी काय असते हे पाहिल्यामुळे गरीब
+            विद्यार्थ्यांना त्यांनी रिकाम्या हातांनी कधीही परत
+            पाठविले नाही. ते स्वतः भटक्या-विमुक्त जमातीत जन्माला
+            आल्यामुळे अशा जाती-जमातीतील विद्यार्थी संगीत कलेपासून
+            वंचित राहू नये म्हणून त्यांना मोफत संगीताचे धडे दिले.
+            त्यांनी विद्यार्थ्यांना सांगीतिक शिक्षण देऊन तृप्त तर
+            केलेच, परंतु याबरोबरच अनेकांचे जीवन उभे केले.
+        </p>
+
+        <h3>
+            सांगीतिक वारशाचे महत्त्व
+        </h3>
+
+        <p>
+            थोडक्यात असे म्हणता येईल की, पं. रामदासजी अनवले
+            गुरुजींनी लातूर जिल्ह्यातील पहिले विद्यालय स्थापन करून
+            एक क्रांतिकारक पाऊल उचलले, ज्याचा लाभ समस्त
+            लातूर जिल्हावासीयांना झाला.
+        </p>
+
+        <p>
+            पं. रामदास अनवले यांनी उदगीर येथे पहिला तंबोरा आणला.
+            संगीत महाविद्यालयाच्या स्थापनेपासून हजारो विद्यार्थी
+            दूरदर्शन, आकाशवाणी, संगीत शिक्षक व प्राध्यापक म्हणून
+            कार्यरत आहेत. आजही अंध, अपंग, मागासवर्गीय, गरजू व
+            होतकरू विद्यार्थ्यांना विनामूल्य मार्गदर्शन केले जाते.
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h3>
+        अनवले संगीत महाविद्यालय, उदगीर
+    </h3>
+
+    <p>
+        संचालक — अनवले संगीत महाविद्यालय, उदगीर
+    </p>
+
+    <p>
+        संपर्क / पत्ता — चौबारा रोड, किल्ला रोड, जवळ उदगीर
+    </p>
+
+    <p>
+        📞 9970911251
+    </p>
+
+    <div class="footer-small">
+        © संचालक, अनवले संगीत महाविद्यालय, उदगीर.
+        सर्व हक्क सुरक्षित.
+    </div>
+
+</footer>
+
+
+<script>
+
+/* ================= MENU ================= */
+
+function openMenu(){
+    document.getElementById("sideMenu").classList.add("open");
+    document.getElementById("overlay").classList.add("show");
+}
+
+function closeMenu(){
+    document.getElementById("sideMenu").classList.remove("open");
+    document.getElementById("overlay").classList.remove("show");
+}
+
+
+/* ================= PAGE NAVIGATION ================= */
+
+function showPage(pageId){
+
+    document.querySelectorAll(".page").forEach(function(page){
+        page.classList.remove("active");
+    });
+
+    const selectedPage = document.getElementById(pageId);
+
+    if(selectedPage){
+        selectedPage.classList.add("active");
+    }
+
+    closeMenu();
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+    history.replaceState(null, "", "#" + pageId);
+}
+
+
+/* ================= HASH SUPPORT ================= */
+
+window.addEventListener("load", function(){
+
+    const hash = window.location.hash.replace("#","");
+
+    const validPages = [
+        "home",
+        "programs",
+        "gallery",
+        "contact",
+        "admission",
+        "history"
+    ];
+
+    if(validPages.includes(hash)){
+        showPage(hash);
+    }else{
+        showPage("home");
+    }
+
+});
+
+
+/* ================= BACK / FORWARD ================= */
+
+window.addEventListener("popstate", function(){
+
+    const hash = window.location.hash.replace("#","");
+
+    if(hash){
+        showPage(hash);
+    }else{
+        showPage("home");
+    }
+
+});
+
+</script>
+
+</body>
 </html>
